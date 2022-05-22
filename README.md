@@ -1,8 +1,14 @@
 # sams_buy
 山姆买菜
 
+程序会下单购物车中所有有库存商品，如需添加购物车，请切换地址至其他城市。
+
+**执行程序前切记将购物车左上角地址切换为最终需下单地址**
+
 此脚本支持 8:00-9:00 的极速达及 14:00-15:00 的全城购，在此期间无须手动配置
+
 其余时间段执行需修改open_time_5及open_time_6
+
 deliveryType_cart,cartDeliveryType 修改配送方式(极速达/全城购)。
 
 下单后需及时付款，程序会有音乐提示，建议再自行配置推送。
@@ -10,18 +16,20 @@ deliveryType_cart,cartDeliveryType 修改配送方式(极速达/全城购)。
 ### 如果觉得本工程有帮助，请点击右上角送作者一个小星星QwQ
 
 ## 使用须知
-###安装requests 组件
+### 安装requests 组件
 执行
 ```bash
 pip install --index-url https://pypi.douban.com/simple/ requests
 ```
 
 ### 关于配置
-请修改config.ini文件
-deviceid,authtoken,trackinfo三个字段为购物车的HTTP头部的字段信息
+1. 请使用抓包工具抓取购物车(getUserCart)页面,手机可使用stream配置https抓包，请自行查找教程
+
+2. 修改config.ini文件，填入抓包获取的deviceid,authtoken,trackinfo
 
 ### 关于测试：
 建议切换至其他城市地址加购物车并下单测试，请注意及时取消订单
+
 **需注意测试后将购物车左上角地址切换为最终需下单地址**
 
 ## 此工程基于 https://github.com/azhan1998/sam_buy
